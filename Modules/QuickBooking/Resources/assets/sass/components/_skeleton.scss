@@ -1,0 +1,98 @@
+.card-skeleton {
+    border: 1px solid var(--bs-border-color);
+}
+.skeleton {
+    background: #d9d9d9;
+    position: relative;
+    overflow: hidden;
+    border-radius: 5px;
+    &::after {
+        position: absolute;
+        content: "";
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 100%;
+        width: 100%;
+        background-image: linear-gradient(to right, #d9d9d9 0%, rgba(0,0,0,0.07) 20%, #d9d9d9 40%, #d9d9d9 100%);
+        background-repeat: no-repeat;
+        background-size: 450px 400px;
+        animation: shimmer 1s linear infinite;
+    }
+   
+
+    &.skeleton-image {
+        background: #d9d9d9;
+    }
+
+    &.skeleton-title {
+        height: 20px;
+        margin: 0 auto;
+        &::after {
+            animation-delay: 0.2s;
+        }
+    }
+
+    &.skeleton-text {
+        height: 15px;
+        &::after {
+            animation-delay: 0.2s;
+        }
+    }
+
+    &.skeleton-badge {
+        border-radius: 26px;
+        height: 30px;
+        width: 50px;
+        display: inline-block;
+    }
+
+    &.skeleton-label {
+        height: 15px;
+    }
+
+    &.skeleton-input {
+        height: 37px;
+    }
+
+    &.skeleton-radio {
+        height: 15px;
+        width: 15px;
+        min-width: 15px;
+        border-radius: 100%;
+    }
+
+    &.skeleton-radio-label {
+        width: 50px;
+        min-width: 50px;
+        height: 15px;
+    }
+
+    &.skeleton-box {
+        height: 400px;
+    }
+
+    &.skeleton-label-box { 
+        background: #d9d9d9;       
+        height: 34px;
+        border-radius: 5px;
+        &::after {
+            animation-delay: 0.2s;
+        }
+    }
+
+}
+
+.service-box {
+    padding: 35px 15px; 
+}
+
+@keyframes shimmer {
+    0%{
+      background-position: -450px 0;
+    }
+    100%{
+      background-position: 450px 0;
+    }
+}

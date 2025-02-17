@@ -1,0 +1,30 @@
+<?php
+
+return [
+    'title' => 'Κέρδη',
+    'lbl_title' => 'Κέρδη',
+    'lbl_select_method' => 'Επιλέξτε Μέθοδο',
+    'lbl_description' => 'Περιγραφή',
+    'lbl_amount' => 'Ποσό',
+    'lbl_payment_method' => 'Μέθοδος Πληρωμής',
+    'lbl_status' => 'Κατάσταση',
+    'lbl_employee_name' => 'Όνομα Προσωπικού',
+    'lbl_total_earning' => 'Ποσό Υπηρεσίας',
+    'lbl_total_booking' => 'Συνολικές Κρατήσεις',
+    'lbl_total_commission' => 'Συνολικά Πραγματοποιηθέντα',
+    'lbl_total_tip' => 'Συνολικό Φιλοδώρημα',
+    'lbl_staff_earning' => 'Κέρδη Προσωπικού',
+    'lbl_payment_type' => 'Τύπος Πληρωμής',
+    'lbl_date' => 'Ημερομηνία Πληρωμής',
+    'lbl_branch_name' => 'Όνομα Καταστήματος',
+    'lbl_action' => 'Δράση',
+    'lbl_tot_booking' => 'Σύνολο Κρατήσεων',
+    'lbl_title_earning' => 'Κέρδη Προσωπικού',
+    'pay_out_to' => 'Πληρωμή Σε',
+    'commission_earn' => 'Κέρδη Προμήθειας',
+    'tip_earn' => 'Κέρδη Συμβουλής',
+    'total_pay' => 'Συνολική Πληρωμή',
+    'select_method' => 'Επιλέξτε μέθοδο',
+    'enter_description' => 'Εισάγετε περιγραφή',
+
+];

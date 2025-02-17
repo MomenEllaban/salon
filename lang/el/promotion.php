@@ -1,0 +1,28 @@
+<?php
+return [
+    'title' => 'Κουπόνια',
+    'singular_title' => 'Κουπόνι',
+    'lbl_status' => 'Κατάσταση',
+    'lbl_expired' => 'Ληγμένο',
+    'lbl_name' => 'Όνομα',
+    'lbl_action' => 'Ενέργεια',
+    'description' => 'Περιγραφή',
+    'start_datetime' => 'Ημερομηνία Έναρξης',
+    'end_datetime' => 'Ημερομηνία Λήξης',
+    'coupon_code' => 'Κωδικός Κουπονιού',
+    'coupon_type' => 'Τύπος Κουπονιού',
+    'number_of_coupon' => 'Αριθμός Κουπονιών',
+    'percent_or_fixed' => 'Ποσοστό ή Σταθερό',
+    'discount_percentage' => 'Ποσοστό Έκπτωσης',
+    'discount_amount' => 'Ποσό Έκπτωσης',
+    'use_limit' => 'Όριο Χρήσης',
+    'coupon_title' => 'Κουπόνια',
+    'user' => 'Χρήστης',
+    'timezone' => 'Ζώνη Ώρας',
+    'value' => 'Αξία',
+    'coupons_list' => 'Λίστα Κουπονιών',
+    'promotion_and_coupons_details' => 'Λεπτομέρειες Προώθησης',
+    'coupon_not_found' => 'Κουπόνι Δεν Βρέθηκε',
+    'coupon_price' => 'Τιμή Κουπονιού',
+
+];

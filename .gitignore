@@ -1,0 +1,61 @@
+node_modules
+/public/hot
+/public/storage
+/storage/*.key
+/vendor
+.env
+.env.backup
+.phpunit.result.cache
+Homestead.json
+Homestead.yaml
+npm-debug.log
+yarn-error.log
+/.idea
+/.vscode
+*.cache
+.DS_Store
+# Ignore compressed files
+*.zip
+
+# Ignore compressed files
+*.sql
+
+# Ignore compressed files
+
+# Ignore media files
+public/images/pro/plugins/video-*.mp4
+public/images/auth-pro/*
+public/images/avatars/*
+public/dummy-images/*
+public/images/loader.gif
+
+Below Comments For Design Style & Scripts
+/public/css/*
+!/public/css/.gitkeep
+/public/js/core/*
+!/public/js/core/.gitkeep
+# Below Comments For Design Style & Scripts
+# /public/css/*
+# !/public/css/.gitkeep
+# /public/js/core/*
+# !/public/js/core/.gitkeep
+
+/public/js/*.js*
+!/public/js/.gitkeep
+
+/public/js/iqonic-script/*.min.js*
+!/public/js/iqonic-script/.gitkeep
+!/public/js/setting-init.js
+
+
+/public/modules/**/*
+!/public/modules/.gitkeep
+/public/mix-manifest.json
+# /public/modules/**/*
+# !/public/modules/.gitkeep
+# /public/mix-manifest.json
+node_modules
+node_modules
+/storage/media-library/**/*
+
+/public/*.json

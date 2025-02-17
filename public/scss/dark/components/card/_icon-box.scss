@@ -1,0 +1,14 @@
+.icon-box {
+    border-color: var(--bs-border-color);
+    color: var(--bs-gray);
+    .overlay {
+        background-color: $body-bg;
+    }
+    &:hover {
+        .overlay{
+            .btn{
+                color: $white;
+            }
+        }
+    }
+}

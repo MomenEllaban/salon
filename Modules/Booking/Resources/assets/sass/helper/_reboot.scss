@@ -1,0 +1,84 @@
+a {
+    color: custom-var('primary');
+    outline: none;
+    text-decoration: none;
+    transition: color 300ms ease-in-out;
+    &:hover, &:focus {
+        color: custom-var('primary-dark'); outline: none;
+        transition: color 300ms ease-in-out;
+    }
+}
+ins {
+    background: #fff9c0;
+    text-decoration: none;
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+pre {
+    background: #eeeeee;
+    padding: 15px;
+    border: 1px solid #eeeeee;
+}
+hr {
+    margin: 1.25rem 0;
+    padding: 0px;
+    border-bottom: 1px solid #a2a2a2;
+    border-top: 0px;
+}
+blockquote { padding: 15px 30px; border: 1px solid #f2f2f2; border-radius: 5px; border-left: 5px solid #0d1e67; margin-bottom: 30px; }
+blockquote cite { font-family: 'Poppins', sans-serif; font-weight: bold; color: #0d1e67; }
+blockquote ol:last-child, blockquote p:last-child, blockquote ul:last-child { margin-bottom: 0; }
+blockquote .blockquote-footer { font-style: italic; color: #6c757d; font-size: 14px; margin-top: 10px; }
+blockquote .blockquote-footer cite { color: #0d1e67; }
+blockquote span.text-right { text-align: right; display: block; color: #0d1e67; }
+
+/* Lists (Nested) */
+ol, ul { padding-left: 25px; margin-bottom: 1em; }
+ol li { list-style: decimal; }
+ol ol { padding-left: 25px; }
+ul li { list-style: inherit; }
+
+/* Definition Lists */
+dl dd { margin-bottom: 15px; }
+dl dd:last-child { margin-bottom: 0px; }
+
+%defaultHeading {
+    font-family: custom-var('heading-font-family');
+    font-weight: 500;
+    color: custom-var('dark');
+}
+h1 {
+    @extend %defaultHeading;
+    font-size: 3.052rem
+}
+h2 {
+    @extend %defaultHeading;
+    font-size: 2.441rem
+}
+h3 {
+    @extend %defaultHeading;
+    font-size: 1.953rem
+}
+h4 {
+    @extend %defaultHeading;
+    font-size: 1.563rem
+}
+h5 {
+    @extend %defaultHeading;
+    font-size: 1.25rem
+}
+h6 {
+    @extend %defaultHeading;
+    font-size: 1rem
+}
+.fw-normal {
+    font-weight: 400;
+}
+.fw-bolder {
+    font-weight: 500;
+}
+.fw-bold {
+    font-weight: 600;
+}

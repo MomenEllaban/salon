@@ -1,0 +1,30 @@
+<?php
+
+return [
+   'title'=>'Ganador',
+   'lbl_title'=>'Ganador',
+   'lbl_select_method'=>'Seleccionar método',
+   'lbl_description'=>'Descripción',
+   'lbl_amount'=>'Cantidad',
+   'lbl_payment_method'=>'Método de pago',
+   'lbl_status'=>'Estado',
+   'lbl_employee_name'=>'Nombre del personal',
+   'lbl_total_earning' => 'Monto del Servicio',
+   'lbl_total_booking'=>'Sin reserva',
+   'lbl_total_commission'=>'Comisión de ganancia',
+   'lbl_total_tip'=>'Ganancia de propina',
+   'lbl_staff_earning'=>'Ganancia del personal',
+   'lbl_payment_type'=>'Tipo de pago',
+   'lbl_date'=>'Fecha de pago',
+   'lbl_branch_name'=>'Nombre de rama',
+   'lbl_action'=>'Acción',
+   'lbl_tot_booking'=>'Reserva total',
+   'lbl_title_earning'=>'Ganancias del personal',
+   'pay_out_to'=>'Pagar a',
+   'commission_earn'=>'Comisión gana',
+   'tip_earn'=>'Propina gana',
+   'total_pay'=>'Pago total',
+   'select_method' => 'Seleccione el método',
+   'enter_description' => 'Ingrese la descripción',
+
+];

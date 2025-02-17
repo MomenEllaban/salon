@@ -1,0 +1,13 @@
+{
+    "name": "BussinessHour",
+    "alias": "bussinesshour",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\BussinessHour\\Providers\\BussinessHourServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}

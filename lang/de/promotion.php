@@ -1,0 +1,28 @@
+<?php
+return [
+    'title' => 'Gutscheine',
+    'singular_title' => 'Gutschein',
+    'lbl_status' => 'Status',
+    'lbl_expired' => 'Abgelaufen',
+    'lbl_name' => 'Name',
+    'lbl_action' => 'Aktion',
+    'description' => 'Beschreibung',
+    'start_datetime' => 'Startdatum',
+    'end_datetime' => 'Enddatum',
+    'coupon_code' => 'Gutscheincode',
+    'coupon_type' => 'Gutscheintyp',
+    'number_of_coupon' => 'Anzahl der Gutscheine',
+    'percent_or_fixed' => 'Prozent oder Fest',
+    'discount_percentage' => 'Rabattprozentsatz',
+    'discount_amount' => 'Rabattbetrag',
+    'use_limit' => 'Nutzungsgrenze',
+    'coupon_title' => 'Gutscheine',
+    'user' => 'Benutzer',
+    'timezone' => 'Zeitzone',
+    'value' => 'Wert',
+    'coupons_list' => 'Gutscheinliste',
+    'promotion_and_coupons_details' => 'Details zur Promotion',
+    'coupon_not_found' => 'Gutschein nicht gefunden',
+    'coupon_price' => 'Gutscheinpreis',
+
+];

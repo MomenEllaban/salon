@@ -1,0 +1,23 @@
+
+.sidebar{
+    &.sidebar-mini{
+        &.sidebar-hover {
+            &:hover {
+                .logo-normal.dark-normal {
+                    opacity: 1;
+                }
+                .logo-mini.dark-mini {
+                    opacity: 0;
+                }
+                .logo-normal {
+                    opacity: 0;
+                }
+                .logo-mini{
+                    opacity: 0;
+                }
+            }
+        }
+    } 
+}
+
+

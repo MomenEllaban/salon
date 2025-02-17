@@ -1,0 +1,13 @@
+{
+    "name": "QuickBooking",
+    "alias": "quickbooking",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\QuickBooking\\Providers\\QuickBookingServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}

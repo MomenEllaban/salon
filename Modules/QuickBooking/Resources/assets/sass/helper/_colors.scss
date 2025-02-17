@@ -1,0 +1,46 @@
+// Background Utilities
+.#{$prefix}bg-primary {
+    background-color: custom-var('primary') !important;
+}
+.#{$prefix}bg-white {
+    background-color: custom-var('white') !important;
+}
+.#{$prefix}bg-primary-light {
+    background-color: custom-var('primary-light') !important;
+}
+
+// Color Utilities
+.#{$prefix}color-primary {
+    color: custom-var('primary') !important;
+    &a, &button {
+        &:hover, &:focus {
+            color: custom-var('primary-dark') !important;
+        }
+    }
+}
+.#{$prefix}color-secondary {
+    color: custom-var('secondary') !important;
+    &a, &button{
+        &:hover, &:focus {
+            color: custom-var('secondary-dark') !important;
+        }
+    }
+}
+.#{$prefix}color-body {
+    color: custom-var('body-color') !important;
+}
+.#{$prefix}color-white {
+    color: custom-var('white') !important;
+}
+.#{$prefix}color-dark {
+    color: custom-var('dark') !important;
+}
+.#{$prefix}text-uppercase{
+    text-transform: uppercase !important;
+}
+.#{$prefix}letter-spacing-1{
+    letter-spacing: 1px !important;
+}
+.#{$prefix}letter-spacing-2{
+    letter-spacing: 2px !important;
+}

@@ -1,0 +1,13 @@
+{
+    "name": "Tip",
+    "alias": "tip",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\Tip\\Providers\\TipServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}

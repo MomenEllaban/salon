@@ -1,0 +1,25 @@
+<?php
+
+namespace {{namespace}}\{{moduleName}}\Tests\Feature;
+
+use Tests\TestCase;
+use Illuminate\Foundation\Testing\WithFaker;
+use Illuminate\Foundation\Testing\RefreshDatabase;
+
+class {{moduleName}}Test extends TestCase
+{
+    use RefreshDatabase;
+    /**
+     * A basic feature test {{moduleName}}.
+     *
+     * @return void
+     */
+    public function test_backend_{{moduleNameLowerPlural}}_list_page()
+    {
+        $this->signInAsAdmin();
+
+        $response = $this->get('app/{{moduleNameLowerPlural}}');
+
+        $response->assertStatus(200);
+    }
+}

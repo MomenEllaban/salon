@@ -1,0 +1,18 @@
+<?php
+
+namespace {{namespace}}\{{moduleName}}\Tests\Unit;
+
+use PHPUnit\Framework\TestCase;
+
+class {{moduleName}}Test extends TestCase
+{
+    /**
+     * A basic test {{moduleName}}.
+     *
+     * @return void
+     */
+    public function test_that_true_is_true()
+    {
+        $this->assertTrue(true);
+    }
+}

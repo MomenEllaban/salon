@@ -1,0 +1,28 @@
+<?php
+return [
+    'title' => 'Coupons',
+    'singular_title' => 'Coupon',
+    'lbl_status' => 'Statut',
+    'lbl_expired' => 'Expiré',
+    'lbl_name' => 'Nom',
+    'lbl_action' => 'Action',
+    'description' => 'Description',
+    'start_datetime' => 'Date de début',
+    'end_datetime' => 'Date de fin',
+    'coupon_code' => 'Code de coupon',
+    'coupon_type' => 'Type de coupon',
+    'number_of_coupon' => 'Nombre de coupons',
+    'percent_or_fixed' => 'Pourcentage ou fixe',
+    'discount_percentage' => 'Pourcentage de remise',
+    'discount_amount' => 'Montant de la remise',
+    'use_limit' => 'Limite d\'utilisation',
+    'coupon_title' => 'Coupons',
+    'user' => 'Utilisateur',
+    'timezone' => 'Fuseau horaire',
+    'value' => 'Valeur',
+    'coupons_list' => 'Liste des coupons',
+    'promotion_and_coupons_details' => 'Détails de la promotion',
+    'coupon_not_found' => 'Coupon non trouvé',
+    'coupon_price' => 'Prix du coupon',
+
+];

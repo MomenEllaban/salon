@@ -1,0 +1,13 @@
+{
+    "name": "LikeModule",
+    "alias": "likemodule",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\LikeModule\\Providers\\LikeModuleServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}

@@ -1,0 +1,164 @@
+@import "./helper/function";
+
+
+$prefix: 'bs-';
+
+
+$primary-light: var(--bs-primary-tint-20);
+$primary: var(--bs-primary);
+$primary-dark: var(--bs-primary-shade-20);
+$primary-rgb: '112,147,229';
+
+$success: var(--bs-success);
+
+$dark: #171C26;
+$white: #ffffff;
+$black: #000000;
+
+$light-color: #b5b9c4;
+$body-color: #6E7990;
+$body-bg: #e7ecf1;
+
+$border-radius: .5em;
+$border-radius-sm: .25em;
+$border-radius-lg: .75em;
+$border-radius-pill: 50em;
+
+$border-color: #eee;
+
+.booking-wizard  {
+    padding: 1em;
+    background: var(--bs-white);
+    border-radius: .5rem;
+    font-family: custom-var('body-font-family');
+    font-size: 14px;
+    color: custom-var('body-color');
+    min-width: 980px;
+    width: 980px;
+    height: 100%;
+    margin: auto;
+
+    // Helpers
+    @import "./helper/colors";
+    @import "./helper/utilities";
+    @import "./helper/reboot";
+
+    // Components
+    @import "./components/card";
+    @import "./components/datepicker";
+    @import "./components/layout";
+    @import "./components/tab";
+    @import "./components/skeleton";
+
+    //responsive
+    @import "./components/responsive";
+
+}
+
+/*===========
+fade-in
+===============*/
+@-webkit-keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+  
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+  
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  /*===========
+  fade-in-bottom
+  ===============*/
+  
+  @-webkit-keyframes fade-in-bottom {
+    0% {
+      -webkit-transform: translateY(50px);
+      transform: translateY(50px);
+      opacity: 0;
+    }
+  
+    100% {
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fade-in-bottom {
+    0% {
+      -webkit-transform: translateY(50px);
+      transform: translateY(50px);
+      opacity: 0;
+    }
+  
+    100% {
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  .booking-wizard .loader-class {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+  .double-lines-spinner {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    position: relative;
+  }
+  
+  .double-lines-spinner::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    border-radius: 50%;
+    border: 2px solid rgba(0, 0, 0, 0.05);
+  }
+  
+  .double-lines-spinner::before {
+    border-right: 2px solid var(--bs-primary);
+    animation: spin 0.5s 0s linear infinite;
+  }
+ 
+  
+  @keyframes spin {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+
+  
+@media (max-width: 1024px) {
+  .booking-wizard {
+    width: auto;
+    min-width: auto;
+  }
+}
+  
+@media (max-width: 768px) {
+    .booking-wizard{
+        padding: .5em;
+    }
+}

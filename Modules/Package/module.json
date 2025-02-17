@@ -1,0 +1,13 @@
+{
+    "name": "Package",
+    "alias": "package",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\Package\\Providers\\PackageServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}
