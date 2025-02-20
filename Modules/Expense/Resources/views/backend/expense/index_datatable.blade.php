@@ -66,13 +66,13 @@
         </div>
 
         <div data-render="app">
-            <expense-form-offcanvas create-title="{{ __('messages.new') }} {{ __($module_title) }}"
+            <expense-form-offcanvas default-image="{{product_feature_image()}}"  create-title="{{ __('messages.new') }} {{ __($module_title) }}"
                 edit-title="{{ __('messages.edit') }} {{ __($module_title) }}">
             </expense-form-offcanvas>
         </div>
 
     </div>
-    <expense-form-offcanvas create-title="{{ __('messages.new') }} {{ __($module_title) }}"
+    <expense-form-offcanvas default-image="{{product_feature_image()}}"  create-title="{{ __('messages.new') }} {{ __($module_title) }}"
         edit-title="{{ __('messages.edit') }} {{ __($module_title) }}">
     </expense-form-offcanvas>
     </div>

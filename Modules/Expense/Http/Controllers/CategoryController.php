@@ -61,7 +61,6 @@ class CategoryController extends Controller
     {
         $term = trim($request->q);
         $parentID = $request->parent_id;
-
         $query_data = ExpenseCategory::where(function ($q) use ($parentID) {
             if (! empty($term)) {
                 $q->orWhere('name', 'LIKE', "%$term%");

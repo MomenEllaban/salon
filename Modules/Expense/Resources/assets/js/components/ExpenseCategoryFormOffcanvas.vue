@@ -177,6 +177,8 @@ const errorMessages = ref({})
 const IS_SUBMITED = ref(false)
 
 const formSubmit = handleSubmit((values) => {
+  console.log("Form Submitted", values);
+
   if (IS_SUBMITED.value) return false
   IS_SUBMITED.value = true
 

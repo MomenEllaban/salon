@@ -28,6 +28,14 @@ return [
     'category'=>'Category',
     'subcategory'=>'Sub Category',
     'lbl_parent_category'=>'Main Category',
+    'enter_amount'=>'Enter Amount',
+    'enter_reference_number'=>'Enter Reference Number',
+    'date'=>'Date',
+    'enter_note'=>'Enter Note',
+    'expense_for'=> 'Expense For',
+    'expense_subcategory'=>'Expense Subcategory',
+    'placeholder_sub_category'=>'Select Expense Subcategory'
+
 
 
 

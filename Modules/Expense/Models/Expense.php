@@ -15,7 +15,9 @@ class Expense extends BaseModel
      * The attributes that are mass assignable.
      */
     protected $fillable = [];
-    
+
+    protected $appends = ['feature_image'];
+
     /**
      * Create a new factory instance for the model.
      *
@@ -38,11 +40,23 @@ class Expense extends BaseModel
 
     public function expenseSubCategory()
     {
-        return $this->belongsTo(ExpenseCategory::class, 'sub_category_id');
+        return $this->belongsTo(ExpenseCategory::class, 'subcategory_id');
     }
 
     public function branch()
     {
         return $this->belongsTo(Branch::class, 'branch_id');
+    }
+
+    public function manager()
+    {
+        return $this->belongsTo(Employee::class, 'manager_id');
+    }
+
+    protected function getFeatureImageAttribute()
+    {
+        $media = $this->getFirstMediaUrl('feature_image');
+
+        return isset($media) && !empty($media) ? $media : default_feature_image();
     }
 }

@@ -18,11 +18,14 @@ return new class extends Migration
             $table->date('date')->nullable();
             $table->text('note')->nullable();
             $table->tinyInteger('status')->nullable()->default('1')->comment('1- Paid , 0- Unpaid');
-            $table->unsignedBigInteger('expense_for')->nullable()->comment('Manager who paid');
             $table->unsignedBigInteger('branch_id')->nullable();
+            $table->unsignedBigInteger('manager_id')->nullable();
             $table->unsignedBigInteger('category_id')->nullable();
-            $table->unsignedBigInteger('sub_category_id')->nullable();
+            $table->unsignedBigInteger('subcategory_id')->nullable();
             $table->unsignedBigInteger('tax')->nullable();
+            $table->integer('created_by')->unsigned()->nullable();
+            $table->integer('updated_by')->unsigned()->nullable();
+            $table->integer('deleted_by')->unsigned()->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

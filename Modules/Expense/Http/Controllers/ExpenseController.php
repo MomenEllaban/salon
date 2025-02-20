@@ -3,7 +3,6 @@
 namespace Modules\Expense\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Modules\Expense\Models\Expense;
@@ -194,8 +193,11 @@ class ExpenseController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
+        $expense = Expense::create($data);
 
-        $query = Expense::create($data);
+        if ($request->feature_image) {
+            storeMediaFile($expense, $request->file('feature_image'));
+        }
 
         $message = __('messages.create_form', ['form' => __($this->module_title)]);
 
