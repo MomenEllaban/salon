@@ -3,6 +3,11 @@
         <button type="button" class="btn btn-soft-primary btn-sm" data-crud-id="{{ $data->id }}"
             title="{{ __('messages.edit') }} " data-bs-toggle="tooltip"> <i class="fa-solid fa-pen-clip"></i></button>
     @endhasPermission
+    <a href="{{ route('backend.expense.show', ['expense' => $data->id]) }}"
+        class="btn btn-sm btn-icon btn-soft-warning" data-bs-toggle="tooltip"
+        data-bs-placement="top" title="View Details">
+        <i class="fa-solid fa-eye"></i>
+    </a>
     @hasPermission('delete_tax')
         <a href="{{ route('backend.expense.destroy', $data->id) }}" id="delete-{{ $module_name }}-{{ $data->id }}"
             class="btn btn-soft-danger btn-sm" data-type="ajax" data-method="DELETE" data-token="{{ csrf_token() }}"

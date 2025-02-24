@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Modules\Expense\Database\factories\ExpenseFactory;
 use App\Models\BaseModel;
 use App\Models\Branch;
+use App\Models\User;
 
 class Expense extends BaseModel
 {
@@ -50,7 +51,7 @@ class Expense extends BaseModel
 
     public function manager()
     {
-        return $this->belongsTo(Employee::class, 'manager_id');
+        return $this->belongsTo(User::class, 'manager_id')->where('is_manager', 1);
     }
 
     protected function getFeatureImageAttribute()

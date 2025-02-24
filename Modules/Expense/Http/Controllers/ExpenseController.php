@@ -132,13 +132,13 @@ class ExpenseController extends Controller
                 return $data->note;
             })
             ->editColumn('category', function ($data) {
-                return $data->expenseCategory->name;
+                return $data->expenseCategory?->name;
             })
             ->editColumn('subcategory', function ($data) {
                 return $data->expenseSubCategory?->name;
             })
             ->editColumn('branch', function ($data) {
-                return $data->branch->name;
+                return $data->branch?->name;
             })
             ->editColumn('updated_at', function ($data) {
                 $module_name = $this->module_name;
@@ -205,6 +205,27 @@ class ExpenseController extends Controller
     }
 
     /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        $module_action = 'Show';
+        $module_name_singular = 'expense';
+
+        $data = Expense::with(['branch', 'manager', 'expenseCategory', 'expenseSubCategory'])
+            ->findOrFail($id);
+
+        return view('expense::backend.expense.show', compact(
+            'module_action',
+            'module_name_singular',
+            'data'
+        ));
+    }
+
+    /**
      * Show the form for editing the specified resource.
      */
     public function edit($id)
@@ -221,9 +242,16 @@ class ExpenseController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $data = Expense::findOrFail($id);
+        $expense = Expense::findOrFail($id);
 
-        $data->update($request->all());
+        $data = $request->except('feature_image');
+        $expense->update($data);
+
+        if ($request->hasFile('feature_image')) {
+            storeMediaFile($expense, $request->file('feature_image'));
+        } elseif ($request->feature_image === null) {
+            $expense->clearMediaCollection('feature_image');
+        }
 
         $message = __('messages.update_form', ['form' => __($this->module_title)]);
 

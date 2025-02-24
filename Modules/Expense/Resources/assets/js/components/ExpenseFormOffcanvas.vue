@@ -121,30 +121,55 @@ const config = ref({
 //Image file
 const ImageViewer = ref(null)
 const profileInputRef = ref(null)
+// const fileUpload = async (e) => {
+//   let file = e.target.files[0];
+//   const allowedTypes = ['image/jpeg', 'image/png'];
+//   const maxSizeInMB = 2;
+//   const maxSizeInBytes = maxSizeInMB * 1024 * 1024;
+
+//   if (!allowedTypes.includes(file.type)) {
+//     window.errorSnackbar('Only JPG, JPEG, and PNG files are allowed.'); 
+//     profileInputRef.value.value = ''; 
+//     return;
+//   }
+
+//   if (file.size > maxSizeInBytes) {
+//     validationMessage.value = `File size exceeds ${maxSizeInMB} MB. Please upload a smaller file.`;
+//     profileInputRef.value.value = '';
+//     return;
+//   }
+
+//   await readFile(file, (fileB64) => {
+//     ImageViewer.value = fileB64;
+//     profileInputRef.value.value = '';
+//     validationMessage.value = ''; 
+//   });
+//   feature_image.value = file;
+// };
+
 const fileUpload = async (e) => {
   let file = e.target.files[0];
-  const allowedTypes = ['image/jpeg', 'image/png'];
   const maxSizeInMB = 2;
   const maxSizeInBytes = maxSizeInMB * 1024 * 1024;
 
-  if (!allowedTypes.includes(file.type)) {
-    window.errorSnackbar('Only JPG, JPEG, and PNG files are allowed.'); 
-    profileInputRef.value.value = ''; 
-    return;
-  }
+  if (file) {
+    if (file.size > maxSizeInBytes) {
+      // File is too large
+      validationMessage.value = `File size exceeds ${maxSizeInMB} MB. Please upload a smaller file.`;
+      // Clear the file input
+      profileInputRef.value.value = '';
+      return;
+    }
 
-  if (file.size > maxSizeInBytes) {
-    validationMessage.value = `File size exceeds ${maxSizeInMB} MB. Please upload a smaller file.`;
-    profileInputRef.value.value = '';
-    return;
+    await readFile(file, (fileB64) => {
+      ImageViewer.value = fileB64;
+      profileInputRef.value.value = '';
+      validationMessage.value = ''; 
+    });
+    feature_image.value = file;
+  } else {
+    validationMessage.value = '';
   }
-
-  await readFile(file, (fileB64) => {
-    ImageViewer.value = fileB64;
-    profileInputRef.value.value = '';
-    validationMessage.value = ''; 
-  });
-  feature_image.value = file;
 };
 
 const removeImage = ({ imageViewerBS64, changeFile }) => {
@@ -303,8 +328,6 @@ const getSubcategories = (cb = null) => {
 
   const parentId = category_id.value.id || category_id.value;
 
-  console.log("Selected Category ID:", parentId);
-  
   useSelect({ url: SUBCATEGORY_LIST, data: { parent_id: parentId } }, { value: 'id', label: 'name' })
     .then((data) => {
       subcategories.value = data;
@@ -322,16 +345,13 @@ const singleSelectOption = ref({
 const errorMessages = ref({})
 const IS_SUBMITED = ref(false)
 const formSubmit = handleSubmit((values) => {
-  console.log("Form Submitted", values);
-  
   if (IS_SUBMITED.value) return false
   IS_SUBMITED.value = true
 
   if (currentId.value > 0) {
-    updateRequest({ url: UPDATE_URL, id: currentId.value, body: values }).then((res) => reset_datatable_close_offcanvas(res))
+    updateRequest({ url: UPDATE_URL, id: currentId.value, body: values, type: 'file' }).then((res) => reset_datatable_close_offcanvas(res))
   } else {
     storeRequest({ url: STORE_URL, body: values, type: 'file' }).then((res) => reset_datatable_close_offcanvas(res))
-
   }
 })
 useOnOffcanvasHide('form-offcanvas', () => setFormData(defaultData()))
