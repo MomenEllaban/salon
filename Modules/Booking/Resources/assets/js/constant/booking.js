@@ -27,3 +27,6 @@ export const PRODUCT_LIST = () => {return {path: `products/index_list_with_varie
 // Package Module
 export const PACKAGE_LIST = ({branch_id}) => { return {path: `package/index_list?branch_id=${branch_id}`, method: 'GET'}};
 export const USER_PACKAGE_LIST = (id) => ({ path: `package/user_package_list/${id}`, method: 'GET' });
+
+//Print Invoice
+export const PRINT_INVOICE = (id) => {return {path: `booking-invoice-print?id=${id}`, method: 'GET'}}

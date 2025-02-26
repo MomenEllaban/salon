@@ -58,5 +58,7 @@ Route::group(['prefix' => 'app', 'as' => 'backend.', 'middleware' => ['auth']], 
     Route::get('booking-invoice', [BookingsController::class, 'viewInvoice'])->name('bookings.invoice');
     Route::get('booking-invoice-download', [BookingsController::class, 'downloadInvoice'])->name('bookings.downloadinvoice');
     Route::get('bookings-table-view', [BookingsController::class, 'datatable_view'])->name('bookings.datatable_view');
+    Route::get('booking-invoice-print', [BookingsController::class, 'printInvoice'])->name('bookings.printInvoice');
+
     Route::resource('bookings', BookingsController::class);
 });

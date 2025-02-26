@@ -101,6 +101,7 @@ return [
     'client_since'=>'Client since ',
     'sale'=>'Sale',
     'coupon_discount'=>'Coupon Discount',
+    'print_invoice' => 'Print Invoice',
 
 
 ];

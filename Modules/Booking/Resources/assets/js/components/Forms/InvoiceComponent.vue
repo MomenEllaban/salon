@@ -157,6 +157,15 @@
         </div>
       </div>
     </div>
+    <div class="py-6 text-end">
+      <a class="btn btn-primary me-3" 
+        :href="`booking-invoice-download?id=${props.booking_id}`">
+        <i class="fa fa-download"></i> {{ $t('booking.download_invoice') }}
+      </a>
+      <button @click="printInvoice" class="btn btn-primary">
+        <i class="fa fa-print"></i> {{ $t('booking.print_invoice') }}
+      </button>
+    </div>
   </template>
   <template v-else>
     <div class="offcanvas-header">
@@ -168,7 +177,7 @@
 </template>
 <script setup>
 import { ref, onMounted, computed } from 'vue'
-import { BOOKING_DETAIL } from '../../constant/booking'
+import { BOOKING_DETAIL, PRINT_INVOICE} from '../../constant/booking'
 import { useRequest } from '@/helpers/hooks/useCrudOpration'
 import * as moment from 'moment'
 
@@ -243,4 +252,27 @@ const formatTransactionType = (type) => {
   // For other types, capitalize only the first letter
   return capitalizeFirstLetter(type)
 }
+
+const printInvoice = () => {
+  getRequest({ url: PRINT_INVOICE, id: props.booking_id  })
+    .then( (response) => {
+
+      if (response.status) {
+        const printWindow = window.open(response.link, '_blank');
+        if (printWindow) {
+          printWindow.onload = function () {
+            printWindow.print();
+          };
+        } else {
+          alert('Pop-up blocked! Please allow pop-ups and try again.');
+        }
+      } else {
+        alert('Failed to generate invoice.');
+      }
+    })
+    .catch((error) => {
+      console.error('Error printing invoice:', error);
+      alert(error);
+    });
+};
 </script>

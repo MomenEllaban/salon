@@ -116,10 +116,14 @@ const BRANCH_FOR_OPTIONS = reactive([
 ])
 
 const PAYMENT_METHODS_OPTIONS = reactive([
-  { id: 'upi', text: 'UPI' },
   { id: 'cash', text: 'Cash' },
-  { id: 'razorpay', text: 'Razorpay' },
-  { id: 'stripe', text: 'Stripe' }
+  { id: 'visa', text: 'Visa' },
+  { id: 'credit', text: 'Credit' },
+  { id: 'bank_transfer', text: 'Bank Transfer' },
+
+  // { id: 'upi', text: 'UPI' },
+  // { id: 'razorpay', text: 'Razorpay' },
+  // { id: 'stripe', text: 'Stripe' }
   // Add more options as needed
 ])
 

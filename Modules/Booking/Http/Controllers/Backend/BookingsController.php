@@ -941,4 +941,50 @@ class BookingsController extends Controller
         }
     }
 
+    public function printInvoice(Request $request)
+    {
+        $booking = Booking::with(['services', 'user', 'products'])->where('status', 'completed')->find($request->id);
+        
+        if (!$booking) {
+            return response()->json(['status' => false, 'message' => 'Booking not found'], 404);
+        }
+
+        $booking['detail'] = $this->bookingDetail($booking);
+
+        // Prepare data for the invoice template
+        $data = $this->sendNotificationOnBookingUpdate('complete_booking', 'Notification message', $booking, false);
+        if ($data === false) {
+            return response()->json(['status' => false, 'message' => 'Failed to prepare booking data for notification'], 500);
+        }
+
+        // Render the PDF
+        $view = view("mail.invoice-templates." . setting('template'), ['data' => $data['booking']])->render();
+        $pdf = Pdf::loadHTML($view);
+
+        // Store the file
+        $baseDirectory = storage_path('app/public');
+        $highestDirectory = collect(File::directories($baseDirectory))->map(function ($directory) {
+            return basename($directory);
+        })->max() ?? 0;
+        $nextDirectory = intval($highestDirectory) + 1;
+        while (File::exists($baseDirectory . '/' . $nextDirectory)) {
+            $nextDirectory++;
+        }
+        $newDirectory = $baseDirectory . '/' . $nextDirectory;
+        File::makeDirectory($newDirectory, 0777, true);
+
+        $filename = 'invoice_' . $request->id . '.pdf';
+        $filePath = $newDirectory . '/' . $filename;
+
+        $pdf->save($filePath);
+
+        $url = url('storage/' . $nextDirectory . '/' . $filename);
+        if (!empty($url)) {
+            return response()->json(['status' => true, 'link' => $url], 200);
+        } else {
+            return response()->json(['status' => false, 'message' => 'Url Not Found'], 404);
+        }
+    }
+
+
 }
