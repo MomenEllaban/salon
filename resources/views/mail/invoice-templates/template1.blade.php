@@ -93,7 +93,7 @@
 <body>
   <div class="invoice">
     <div class="invoice-logo-section">
-      <img src="{{ public_path(setting('logo')) }}" alt="logo" class="img-fluid" width="100">
+      <img src="{{ (setting('logo')) }}" alt="logo" class="img-fluid" width="100">
     </div>
     <div class="text-end">
       <p><strong>Invoice No:</strong> Booking{{$data['id']}}</p>
